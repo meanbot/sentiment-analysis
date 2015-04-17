@@ -6,10 +6,11 @@ from sklearn.feature_extraction.text import CountVectorizer
 import NaiveBayes as NB
 import pandas as pd
 #from nltk.corpus import stopwords
+import nltk
+nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
 from sklearn.cross_validation import KFold
 import re
-import nltk
 
 def stem_tokens(tokens, stemmer):
     stemmed = []
