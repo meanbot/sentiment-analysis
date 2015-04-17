@@ -3,8 +3,6 @@ import tornado.web
 import os
 from sa import SentimentAnalysis as SA
 
-model = SA.SentimentAnalysis('sa/movie-reviews-sentiment.tsv')
-model.fit();
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         query = self.get_argument("query", "").strip()
@@ -27,6 +25,7 @@ if __name__ == "__main__":
     application = tornado.web.Application([
     (r"/", MainHandler)], **settings)
     port = int(os.environ.get("PORT", 5000))
-
     application.listen(port)
+    model = SA.SentimentAnalysis('sa/movie-reviews-sentiment.tsv')
+    model.fit();
     tornado.ioloop.IOLoop.instance().start()
