@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 import NaiveBayes as NB
 import pandas as pd
-from nltk.corpus import stopwords
+#from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from sklearn.cross_validation import KFold
 import re
@@ -19,8 +19,8 @@ def stem_tokens(tokens, stemmer):
 
 def tokenize(raw_text):
     tokens = nltk.word_tokenize(raw_text)
-    stops = set(stopwords.words("english"))
-    filtered = [w for w in tokens if not w in stops]
+    #stops = set(stopwords.words("english"))
+    #filtered = [w for w in tokens if not w in stops]
     stemmer=PorterStemmer()
     stems = stem_tokens(tokens,stemmer)
     return stems
