@@ -16,7 +16,6 @@ class MainHandler(tornado.web.RequestHandler):
 
 
 if __name__ == "__main__":
-    print "Done building model"
     dirname = os.path.dirname(__file__)
     settings = {
         "static_path" : os.path.join(dirname, "static"),
@@ -28,4 +27,5 @@ if __name__ == "__main__":
     application.listen(port)
     model = SA.SentimentAnalysis('sa/movie-reviews-sentiment.tsv')
     model.fit();
+    print "Done building model"
     tornado.ioloop.IOLoop.instance().start()
