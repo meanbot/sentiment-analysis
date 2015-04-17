@@ -7,7 +7,7 @@ import NaiveBayes as NB
 import pandas as pd
 #from nltk.corpus import stopwords
 import nltk
-nltk.download('punkt')
+nltk.data.path.append('../nltk_data/')
 from nltk.stem.porter import PorterStemmer
 from sklearn.cross_validation import KFold
 import re
