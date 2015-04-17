@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Sentiment Analysis</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+      <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/static/css/normalize.css">
+      <link rel="stylesheet" href="/static/css/main.css">
+    </head>
+    <body>
+      <!--[if lt IE 8]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+          <![endif]-->
+      
+      <!-- Add your site or application content here -->
+      <header>Sentiment Analysis</header>
+      <form method="get" id="messageform">
+        <input type="text" placeholder="Enter movie review here" class="input-xxlarge" name="query" value="slow, dry, poorly cast, but beautifully shot." id="mytext">
+        <p>
+        <button class="btn btn-large btn-block btn-primary" type="submit" id="mybutton">Predict!</button>
+        </p>
+      </form>
+
+      <div id="visuals" style="display:none;" pos=0 neg=0>
+        <div class="page-header">
+          <h4>Sentiment Analysis Results for "movie review" </h4>
+          <h5>Result: </h5>
+        </div>
+      </div>
+      <div id="results" class="row-fluid">
+          <div class="page-header">
+            <h4>Review: <div id="review" style="display:inline-block;color: blue"></div></h4>
+            <h5>Result: <div id="result" style="display:inline-block"></div></h5>
+          </div>
+      </div>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="/static/js/main.js"></script>        
+        <footer>
+          <p>Made by <a target="_blank" href="http://github.com/meanbot">Parav Nagarsheth</a> &nbsp;&copy; 2015</p>
+        </footer>
+    </body>
+</html>
